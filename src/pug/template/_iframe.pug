@@ -1,0 +1,42 @@
+//- 変数埋め込みスペース
+block varlist
+
+
+//- サーバリスト用mixin
+mixin tdserver(serverurl, servername)
+  td(data-label=`SERVER`): a(href=`${serverurl}` target=`_blank` rel=`noopener`) #{servername}
+  <!-- サーバトップページ -->
+
+mixin tdfile(fileurl)
+  td(data-label=`File`): a(href=`${fileurl}` target=`_blank` rel=`noopener`)  DOWNLOAD
+  <!-- ファイルリンク -->
+
+mixin tdfile2(fileurlja, fileurlen, fileurltc, fileurlsc)
+  td(data-label=`File`)
+    a(href=`${fileurlja}` target=`_blank` rel=`noopener`)  DOWNLOAD JA Version
+    a(href=`${fileurlen}` target=`_blank` rel=`noopener`)  DOWNLOAD EN Version
+    a(href=`${fileurltc}` target=`_blank` rel=`noopener`)  DOWNLOAD TC Version
+    a(href=`${fileurlsc}` target=`_blank` rel=`noopener`)  DOWNLOAD SC Version
+  <!-- ファイルリンク -->
+
+mixin tdmaker(makerurl)
+  td(data-label=`Link Page`): a(href=`${makerurl}` target=`_blank` rel=`noopener`)  Description Page
+  <!-- メーカーページ -->
+
+
+
+doctype html
+html(lang=`ja`)
+  head
+    meta(charset=`utf-8`)
+    title #{siteTitle}
+    link(name=`viewport` content=`width=device-width,minimum-scale=1,initial-scale=1,viewport-fit=cover`)
+    link(href=`${dirpass}css/bootstrap-reboot.min.css` rel=`stylesheet`)
+
+    //- 追加CSS
+    block appendhead
+
+  body
+
+    //- メインコンテンツここ
+    block mainblock

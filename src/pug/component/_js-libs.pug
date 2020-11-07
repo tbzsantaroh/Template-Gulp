@@ -1,0 +1,40 @@
+//- JavaScriptリスト
+
+//-
+  webpackバンドル
+script(src=`${dirpass}js/bundle.js`)
+
+//-
+  年齢確認
+  言語別で読み込みファイルを切り替え
+case lang
+  when 'en'
+    script(src=`${dirpass}js/cookiepass/CookiePass-en.js`)
+  when 'tc'
+    script(src=`${dirpass}js/cookiepass/CookiePass-tc.js`)
+  when 'sc'
+    script(src=`${dirpass}js/cookiepass/CookiePass-sc.js`)
+  default
+    script(src=`${dirpass}js/cookiepass/CookiePass.js`)
+
+
+//-
+  jQuery
+script(src=`https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js`)
+
+
+//-
+  SNSボタン
+  http://js-socials.com/
+script(src=`https://cdnjs.cloudflare.com/ajax/libs/jsSocials/1.5.0/jssocials.min.js`)
+
+
+//-
+  Lightbox
+  https://cornel.bopp-art.com/lightcase/
+script(src=`https://cdnjs.cloudflare.com/ajax/libs/lightcase/2.5.0/js/lightcase.min.js`)
+
+
+//-
+  jQueryの設定
+script(src=`${dirpass}js/setting-jquerylib.js`)

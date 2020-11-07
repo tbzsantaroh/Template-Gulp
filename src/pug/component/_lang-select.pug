@@ -1,0 +1,26 @@
+//- 言語セレクトボタン mixinの使い所さん
+
+.lang-select
+  a(class=`lang-link` href=`#inline1` data-rel=`lightcase` title=`Language Select`): ul(class=`thum-img`)
+    li: img(src=`img/base/lang-ja.svg` alt=`ja`)
+    li: img(src=`img/base/lang-en.svg` alt=`en`)
+    li: img(src=`img/base/lang-tc.svg` alt=`tc`)
+    li: img(src=`img/base/lang-sc.svg` alt=`sc`)
+
+  .lang-select-popup(id=`inline1` style=`display: none;`): ul
+    li: a(href=`${dirpass}${filename}.html` lang=`ja`)
+      img(src=`img/base/lang-ja.svg` alt=`ja`)
+      br
+      p 日本語
+    li: a(href=`${dirpass}${filename}-en.html` lang=`en`)
+      img(src=`img/base/lang-en.svg` alt=`en`)
+      br
+      p English
+    li: a(href=`${dirpass}${filename}-tc.html` lang=`zh-cmn-Hant`)
+      img(src=`img/base/lang-tc.svg` alt=`tc`)
+      br
+      p 繁體中文
+    li: a(href=`${dirpass}${filename}-sc.html` lang=`zh-cmn-Hans`)
+      img(src=`img/base/lang-sc.svg` alt=`sc`)
+      br
+      p 简体中文

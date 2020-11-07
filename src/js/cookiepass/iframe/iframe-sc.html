@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confirm</title>
+<link href="css/iframe.css" rel="stylesheet">
+</head>
+<body id="popupBody" class="lang_sc">
+<section id="noticeWindow">
+
+
+
+<h1>
+  <span class="h1normal"><span class="color18 size18small">本網站包含的信息如果您未滿18歲則無法查看。</span><br>
+  請不要從這裡開始觀看18歲以下的人</span>
+</h1>
+
+<p class="warning-general warning-off" id="warning">請不要從這裡開始觀看18歲以下的人</p>
+
+<div class="btn-wrap">
+  <button class="over18" id="btnYes"><span class="btn-entext">YES</span></button>
+  <button class="over18" id="btnNo"><span class="btn-entext">NO</span></button>
+</div>  <!-- .btn-wrap -->
+
+<p class="warning"> </p>
+
+
+
+</section>
+<script>
+/**
+  * YESボタン押したときの動作
+  */
+document.getElementById('btnYes').onclick = function() {
+  // cookie付与 有効期限は1年
+  document.cookie = 'over18=true; path=/; max-age=31536000';
+
+  // 終了アニメーション
+  document.getElementById('popupBody').classList.add('windowclose');
+  document.getElementById('noticeWindow').classList.add('windowclose');
+
+  setTimeout(function(){  // 終了アニメーションのために0.5秒待ってから消す
+    // 現在のiframeの親ウィンドの#popifraidにdisplay:noneをつける
+    window.parent.document.getElementById('cookiepassWindow').style.display = 'none';
+  },500);
+}
+
+
+/**
+  * NOボタン押したときの動作
+  */
+document.getElementById('btnNo').onclick = function() {
+  // classつけてお断りメッセージを表示する
+  document.getElementById('warning').className='warning-general warning-on';
+}
+</script>
+</body>
+</html>

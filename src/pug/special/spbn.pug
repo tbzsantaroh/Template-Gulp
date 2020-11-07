@@ -1,0 +1,64 @@
+extends ../template/_main.pug
+
+block varlist
+  //- ファイル名
+  - const filename = 'character';
+
+  //- 言語指定 ja,en,tc,sc
+  - const lang = 'ja';
+
+  //- galleryとかの下層ディレクトリ指定
+  - const dirpass = '';
+
+  //- このincludeをcaseで選択できるかテスト ダメなら普通に書いて、その他はコメにファイル名書いとく
+  include ../component/_var-ja.pug
+  //- include ../component/_var-en.pug
+  //- include ../component/_var-tc.pug
+  //- include ../component/_var-sc.pug
+
+
+
+block article
+  .top-image-group
+    .kusodeka-name: img(src=`img/character/kusodeka_name-1.svg` alt=`name alt`)
+    .serifu: img(src=`img/character/serifu-name.svg` alt=`「セリフ」`)
+    .main-name: img(src=`img/character/name-name.svg` alt=`名前`)
+
+  .main-tachie: +picture(`character/tachie-name`, `png`, ``)
+  .chara-bg: +picture(`character/bg-name`, `png`, ``)
+
+  .chara-text
+    p イキスギィ！
+
+    p サンプルテキスト<br>
+      | サンプルテキスト<br>
+      | サンプルテキスト<br>
+      | サンプルテキスト
+
+    p サンプルテキスト<br>
+      | サンプルテキスト
+
+    //- サンプルボイス
+    .voice
+      ul
+        li#voice1-btn: p: i.fa.fa-circle(aria-hidden=`true`)
+        li#voice2-btn: p: i.fa.fa-circle(aria-hidden=`true`)
+        li#voice3-btn: p: i.fa.fa-circle(aria-hidden=`true`)
+        li#voice4-btn: p: i.fa.fa-gittip(aria-hidden=`true`)
+        li#voice5-btn: p: i.fa.fa-gittip(aria-hidden=`true`)
+
+      //- 音声ファイル指定
+      mixin audios(fileid, voicename)
+        audio(id=`voice${fileid}-date` preload=`metadata`)
+          source(src=`voice/${voicename}/${voicename}_0${fileid}.ogg` type=`audio/ogg`)
+          source(src=`voice/${voicename}/${voicename}_0${fileid}.mp3` type=`audio/mp3`)
+      +audios(1, `name`)
+      +audios(2, `name`)
+      +audios(3, `name`)
+      +audios(4, `name`)
+      +audios(5, `name`)
+
+  ul.character-select
+    li: a(href=`character${canolang}.html`): img(src=`img/character/select-name.jpg` alt=`` lazyload=`on`)
+    li: a(href=`character2${canolang}.html`): img(src=`img/character/select-tamaki.jpg` alt=`` lazyload=`on`)
+    li: a(href=`character3${canolang}.html`): img(src=`img/character/select-sub.jpg` alt=`` lazyload=`on`)

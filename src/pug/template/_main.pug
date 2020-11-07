@@ -1,0 +1,36 @@
+//- 変数埋め込みスペース
+block varlist
+
+//- mixin埋め込み
+include ../mixin/_common-mixin.pug
+
+
+doctype html
+html(lang=`${htmllang}`)
+  include ../component/_head.pug
+  body(class=`page_${filename}${bodyLangClass}`)
+
+    //- footerを下寄せするためのラッパー
+    .footerbottomwrap
+
+      case filename
+        when 'index'
+          //- indexは共通メニュー非表示にする
+          - break
+        default
+          include ../component/_main-nav.pug
+
+      include ../component/_lang-select.pug
+
+
+      //- メインコンテンツここ
+      case filename
+        when 'index'
+          //- indexはarticleラップない
+          block article
+        default
+          article: block article
+
+
+    include ../component/_footer.pug
+    include ../component/_js-libs.pug

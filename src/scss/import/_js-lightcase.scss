@@ -1,0 +1,30 @@
+/**
+ * Lightcase - jQuery Plugin
+ * The smart and flexible Lightbox Plugin.
+ *
+ * @author		Cornel Boppart <cornel@bopp-art.com>
+ * @copyright	Author
+ *
+ * @version		2.5.0 (11/03/2018)
+ */
+
+// Import settings
+@import 'js-lightcase-components/settings';
+
+// Import icon font
+@import 'js-lightcase-components/fonts/font-lightcase';
+
+// Import mixins
+@import 'js-lightcase-components/mixins/presets';
+@import 'js-lightcase-components/mixins/utilities';
+
+// Import modules
+@import 'js-lightcase-components/modules/animations';
+@import 'js-lightcase-components/modules/case';
+@import 'js-lightcase-components/modules/content';
+@import 'js-lightcase-components/modules/error';
+@import 'js-lightcase-components/modules/global';
+@import 'js-lightcase-components/modules/info';
+@import 'js-lightcase-components/modules/loading';
+@import 'js-lightcase-components/modules/navigation';
+@import 'js-lightcase-components/modules/overlay';

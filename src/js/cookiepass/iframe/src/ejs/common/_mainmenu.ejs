@@ -1,0 +1,41 @@
+<div class="spnav-wrap"><%# モバイル用フルスクリーンメニュー %>
+  <input id="tab-one" type="checkbox" name="tabs"><%# CSSのチェックボックスでオンオフするやつ %>
+  <label for="tab-one"><i class="fa fa-bars" aria-hidden="true"></i></label><%# 開閉ボタン %>
+
+  <div class="spnav"><%# チェックで開閉内容 %>
+    <header>
+      <div class="titlelogo"><a href="index.html">
+        <picture>
+          <source type=image/webp srcset="img/base/title.webp">
+          <img src="img/base/title.png" alt="タイトルロゴ">
+        </picture>
+      </a></div><%# .titlelogo %>
+
+      <nav><ul>
+        <li><a href="index.html"><img src="img/base/menu-index.svg" alt="トップ"></a></li>
+        <li><a href="story.html"><img src="img/base/menu-story.svg" alt="ストーリー"></a></li>
+        <li><a href="character.html"><img src="img/base/menu-character.svg" alt="キャラクター"></a></li>
+        <li><a href="gallery.html"><img src="img/base/menu-gallery.svg" alt="ギャラリー"></a></li>
+        <li><a href="download.html"><img src="img/base/menu-download.svg" alt="ダウンロード"></a></li>
+        <li><a href="special.html"><img src="img/base/menu-special.svg" alt="スペシャル"></a></li>
+      </ul></nav>
+    </header>
+  </div><%# .spnav %>
+</div><%# .spnav-wrap %>
+
+
+<div class="lang-select"><%# 言語セレクトボタン %>
+  <a class="lang-link" href="#inline1" data-rel="lightcase" title="Language Select"><%# 常時左上に出てるボタン %>
+    <ul class="thum-img">
+      <li><img src="img/base/lang-ja.svg" alt="ja"></li>
+      <li><img src="img/base/lang-en.svg" alt="en"></li>
+      <li><img src="img/base/lang-tc.svg" alt="tc"></li>
+    </ul>
+  </a>
+
+  <div class="lang-select-popup" id="inline1" style="display: none;"><ul><%# 左上のボタン押すとポップアップしてくる言語選択ボタン %>
+    <li><a href="special-dakimakura.html"><img src="img/base/lang-ja.svg" alt="ja"><br>日本語</a></li>
+    <li><a href ="special-dakimakura-en.html"><img src="img/base/lang-en.svg" alt="en"><br>English</a></li>
+    <li><a href ="special-dakimakura-tc.html"><img src="img/base/lang-tc.svg" alt="tc"><br>繁體中文</a></li>
+  </ul></div><%# .lang-select-popup %>
+</div><%# .lang-select %>

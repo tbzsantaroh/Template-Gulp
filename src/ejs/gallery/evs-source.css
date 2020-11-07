@@ -1,0 +1,332 @@
+@charset "utf-8";
+
+
+
+
+body {	/* 全体設定 */
+	font-family: 'Meiryo', sans-serif;	/* フォント指定 メイリオ優先 */
+	overflow: hidden;	/* ポップアップしたウィンドのスクロールバー消し */
+	-webkit-text-size-adjust: 100%;	/* モバイル環境で縦と横で文字サイズ変らないように固定 */
+	background: #fff;
+	margin: 0;
+}
+@media (max-width: 990px) {
+	body {
+		overflow: auto;
+	}
+}
+
+a:link, a:visited {	/* 左下のウィンドたたむボタン */
+	color: #fff;
+	text-decoration: none;
+}
+
+img {
+	border: none;	/* 許されざるIEのimg border */
+}
+
+
+.window_cg {	/* CG部分 */
+	width: 1024px;
+	height: 768px;
+	z-index: 1;
+}
+@media (max-width: 990px) {
+	.window_cg {
+		width: auto;
+		height: 768px;
+	}
+}
+
+#ev1cg {
+	background: url("../img/eventcg/ev01.jpg") no-repeat;
+}
+#ev1cg:hover {
+	background: url("../img/eventcg/ev01.jpg") 0 -768px no-repeat;
+}
+#ev2cg {
+	background: url("../img/eventcg/ev02.jpg") no-repeat;
+}
+#ev2cg:hover {
+	background: url("../img/eventcg/ev02.jpg") 0 -768px no-repeat;
+}
+#ev3cg {
+	background: url("../img/eventcg/ev03.jpg") no-repeat;
+}
+#ev3cg:hover {
+	background: url("../img/eventcg/ev03.jpg") 0 -768px no-repeat;
+}
+#ev4cg {
+	background: url("../img/eventcg/ev04.jpg") no-repeat;
+}
+#ev4cg:hover {
+	background: url("../img/eventcg/ev04.jpg") 0 -768px no-repeat;
+}
+#ev5cg {
+	background: url("../img/eventcg/ev05.jpg") no-repeat;
+}
+#ev5cg:hover {
+	background: url("../img/eventcg/ev05.jpg") 0 -768px no-repeat;
+}
+#ev6cg {
+	background: url("../img/eventcg/ev06.jpg") no-repeat;
+}
+#ev6cg:hover {
+	background: url("../img/eventcg/ev06.jpg") 0 -768px no-repeat;
+}
+#ev7cg {
+	background: url("../img/eventcg/ev07.jpg") no-repeat;
+}
+#ev7cg:hover {
+	background: url("../img/eventcg/ev07.jpg") 0 -768px no-repeat;
+}
+#ev8cg {
+	background: url("../img/eventcg/ev08.jpg") no-repeat;
+}
+#ev8cg:hover {
+	background: url("../img/eventcg/ev08.jpg") 0 -768px no-repeat;
+}
+#ev9cg {
+	background: url("../img/eventcg/ev09.jpg") no-repeat;
+}
+#ev9cg:hover {
+	background: url("../img/eventcg/ev09.jpg") 0 -768px no-repeat;
+}
+#ev10cg {
+	background: url("../img/eventcg/ev10.jpg") no-repeat;
+}
+#ev10cg:hover {
+	background: url("../img/eventcg/ev10.jpg") 0 -768px no-repeat;
+}
+#ev11cg {
+	background: url("../img/eventcg/ev11.jpg") no-repeat;
+}
+#ev11cg:hover {
+	background: url("../img/eventcg/ev11.jpg") 0 -768px no-repeat;
+}
+#ev12cg {
+	background: url("../img/eventcg/ev12.jpg") no-repeat;
+}
+#ev12cg:hover {
+	background: url("../img/eventcg/ev12.jpg") 0 -768px no-repeat;
+}
+@media (max-width: 990px) {
+	#ev1cg {
+		background: url("../img/eventcg/ev01m1.jpg") no-repeat;	background-size: contain;
+	}
+	#ev1cg:hover {
+		background: url("../img/eventcg/ev01m2.jpg") no-repeat;	background-size: contain;
+	}
+	#ev2cg {
+		background: url("../img/eventcg/ev02m1.jpg") no-repeat;	background-size: contain;
+	}
+	#ev2cg:hover {
+		background: url("../img/eventcg/ev02m2.jpg") no-repeat;	background-size: contain;
+	}
+	#ev3cg {
+		background: url("../img/eventcg/ev03m1.jpg") no-repeat;	background-size: contain;
+	}
+	#ev3cg:hover {
+		background: url("../img/eventcg/ev03m2.jpg") no-repeat;	background-size: contain;
+	}
+	#ev4cg {
+		background: url("../img/eventcg/ev04m1.jpg") no-repeat;	background-size: contain;
+	}
+	#ev4cg:hover {
+		background: url("../img/eventcg/ev04m2.jpg") no-repeat;	background-size: contain;
+	}
+	#ev5cg {
+		background: url("../img/eventcg/ev05m1.jpg") no-repeat;	background-size: contain;
+	}
+	#ev5cg:hover {
+		background: url("../img/eventcg/ev05m2.jpg") no-repeat;	background-size: contain;
+	}
+	#ev6cg {
+		background: url("../img/eventcg/ev06m1.jpg") no-repeat;	background-size: contain;
+	}
+	#ev6cg:hover {
+		background: url("../img/eventcg/ev06m2.jpg") no-repeat;	background-size: contain;
+	}
+	#ev7cg {
+		background: url("../img/eventcg/ev07m1.jpg") no-repeat;	background-size: contain;
+	}
+	#ev7cg:hover {
+		background: url("../img/eventcg/ev07m2.jpg") no-repeat;	background-size: contain;
+	}
+	#ev8cg {
+		background: url("../img/eventcg/ev08m1.jpg") no-repeat;	background-size: contain;
+	}
+	#ev8cg:hover {
+		background: url("../img/eventcg/ev08m2.jpg") no-repeat;	background-size: contain;
+	}
+	#ev9cg {
+		background: url("../img/eventcg/ev09m1.jpg") no-repeat;	background-size: contain;
+	}
+	#ev9cg:hover {
+		background: url("../img/eventcg/ev09m2.jpg") no-repeat;	background-size: contain;
+	}
+	#ev10cg {
+		background: url("../img/eventcg/ev10m1.jpg") no-repeat;	background-size: contain;
+	}
+	#ev10cg:hover {
+		background: url("../img/eventcg/ev10m2.jpg") no-repeat;	background-size: contain;
+	}
+	#ev11cg {
+		background: url("../img/eventcg/ev11m1.jpg") no-repeat;	background-size: contain;
+	}
+	#ev11cg:hover {
+		background: url("../img/eventcg/ev11m2.jpg") no-repeat;	background-size: contain;
+	}
+	#ev12cg {
+		background: url("../img/eventcg/ev12m1.jpg") no-repeat;	background-size: contain;
+	}
+	#ev12cg:hover {
+		background: url("../img/eventcg/ev12m2.jpg") no-repeat;	background-size: contain;
+	}
+}
+
+
+
+/* CSS3発射エフェクト
+----------------------------- */
+.flash:hover {
+	-moz-animation: flash 1s linear 1;
+	-webkit-animation: flash 1s linear 1;
+	-ms-animation: flash 1s linear 1;
+	animation: flash 1s linear 1;
+}
+@-moz-keyframes flash {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+@-webkit-keyframes flash {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+@-ms-keyframes flash {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+@keyframes flash {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+
+
+.window_mes {	/* メッセージウィンド */
+	width: 1024px;
+	position: relative;
+	top: -248px;
+	z-index: 2;
+	border: none;
+}
+@media (max-width: 990px) {
+	.window_mes {
+		width: auto;
+		top: 0;
+		border-top: 5px solid #333;
+	}
+}
+
+
+h3 {	/* ウィンドをたたむボタン */
+	line-height: 0;
+	text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 5px 5px 0 #fff;
+	position: relative;
+	top: 200px;
+	left: 2px;
+	z-index: 5;
+	font-size: 1.5em;
+}
+@media (max-width: 990px) {
+	h3 {
+		display: none;
+	}
+}
+
+.window_txt {
+	color: #fff;
+		text-shadow: 1px 0 2px #000,
+					-1px 0 2px #000,
+					0 1px 2px #000,
+					0 -1px 2px #000;
+	height: 200px;
+	overflow: auto;
+	background: rgba(0,0,0,0.6);
+	border-top: 1px solid #222;
+	border: none;
+}
+@media (max-width: 990px) {
+	.window_txt {
+		height: auto;
+	}
+}
+
+
+.name {
+	margin: .5em 0 .2em 2em;	/* たたむボタンが被らないように余白確保 */
+/*	line-height: 2;	*/
+	white-space: nowrap;
+	vertical-align: bottom;
+	clear: both;
+}
+@media (max-width: 990px) {
+	.name {
+		margin: .5em 0 .2em;
+	}
+}
+
+
+.text {
+	clear: both;
+	margin: 0 1em 0 2.3em;	/* たたむボタンが被らないように余白確保 */
+	font-size: 0.95em;
+}
+@media (max-width: 990px) {
+	.text {
+		margin: 0 0 0 .3em;
+	}
+}
+
+.novoice {	/* セリフ以外の文字 */
+	clear: both;
+	margin: .5em 1em 0 3em;
+	font-size: 0.8em;
+	color: #ddd;
+}
+@media (max-width: 990px) {
+	.novoice {
+		margin: .5em 0 0 1em;
+	}
+}
+
+/* 個別カラー
+----------------------------- */
+.red {
+	color: #FF3366;
+}
+.blue {
+	color: #66FFFF;
+}
+.purple {
+	color: #CC99FF;
+}
+.gray {
+	color: #B0B0B0;
+}
+.pink {
+	color: #ef1c51;
+}
+
+/* 多言語フォント用指定
+----------------------------- */
+.space-massage{
+	font-family: 'Noto Sans SC', sans-serif;	/* 簡体指定 */
+	font-family: 'Noto Sans TC', sans-serif;	/* 繁体指定 */
+}
+
+/* html側のフォント読み込みサンプル
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC&display=swap" rel="stylesheet">
+*/

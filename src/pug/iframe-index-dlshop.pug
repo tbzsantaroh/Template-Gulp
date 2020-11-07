@@ -1,0 +1,37 @@
+extends template/_iframe.pug
+
+block varlist
+  //- タイトル
+  - const siteTitle = 'タイトル名 ダウンロード販売ショップ';
+
+  //- galleryとかの下層ディレクトリ指定
+  - const dirpass = '';
+
+
+
+//- headの追加部分
+block appendhead
+  //- CSSファイルパス
+  link(href=`${dirpass}css/index-dlshop.css` rel=`stylesheet`)
+
+
+
+//- メインコンテンツ
+block mainblock
+  h1: +picture(`special/spbn-dlshop@2x`, `jpg`, `ダウンロード版 配信中`)
+
+  ul
+    li: a(href="https://sampleURL" target="_blank") store name<br>
+      | #[span.site-url sampleURL.co.jp]
+
+    li: a(href="https://sampleURL" target="_blank") store name<br>
+      | #[span.site-url www.sampleURL.com]
+
+    li: a(href="http://sampleURL" target="_blank") store name<br>
+      | #[span.site-url sampleURL.com]
+
+    li: a(href="http://sampleURL" target="_blank") store name<br>
+      | #[span.site-url sampleURL.com]
+
+    li: a(href="https://sampleURL/" target="_blank") (store name)<br>
+      | #[span.site-url sampleURL.com]

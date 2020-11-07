@@ -1,0 +1,30 @@
+</section><%# #noticeWindow %><%# この section#noticeWindow は ejs/common/_bottom_script.ejs でウィンド閉じるアニメーションに使っているjs用ID %>
+<script>
+/**
+  * YESボタン押したときの動作
+  */
+document.getElementById('btnYes').onclick = function() {
+  // cookie付与 有効期限は1年
+  document.cookie = 'over18=true; path=/; max-age=31536000';
+
+  // 終了アニメーション
+  document.getElementById('popupBody').classList.add('windowclose');
+  document.getElementById('noticeWindow').classList.add('windowclose');
+
+  setTimeout(function(){  // 終了アニメーションのために0.5秒待ってから消す
+    // 現在のiframeの親ウィンドの#popifraidにdisplay:noneをつける
+    window.parent.document.getElementById('cookiepassWindow').style.display = 'none';
+  },500);
+}
+
+
+/**
+  * NOボタン押したときの動作
+  */
+document.getElementById('btnNo').onclick = function() {
+  // classつけてお断りメッセージを表示する
+  document.getElementById('warning').className='warning-general warning-on';
+}
+</script>
+</body><%# #popupBody %><%# この #popupBody は ejs/common/_bottom_script.ejs でウィンド閉じるアニメーションに使っているjs用ID %>
+</html>

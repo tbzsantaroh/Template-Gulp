@@ -1,0 +1,142 @@
+extends template/_main.pug
+
+block varlist
+  //- ファイル名
+  - const filename = 'index';
+
+  //- 言語指定 ja,en,tc,sc
+  - const lang = 'en';
+
+  //- galleryとかの下層ディレクトリ指定
+  - const dirpass = '';
+
+  //- このincludeをcaseで選択できるかテスト ダメなら普通に書いて、その他はコメにファイル名書いとく
+  //- include component/_var-ja.pug
+  include component/_var-en.pug
+  //- include component/_var-tc.pug
+  //- include component/_var-sc.pug
+
+
+
+block article
+  //- 背景消す用白壁
+  .bg-white#index-anime1
+
+  //- .topimage はトップ画像出すためのスペース
+  //- 3人立ち絵 background-image
+  .topimage#index-anime5
+
+    //- 画像サイズを画面幅基準で調整するためラッパーdivつけた  テキスト もとは .topimage-text
+    .topimage-phrase#index-anime2
+      +picture(`index/index-anime-text1-en`, `png`, `sample text`)
+
+    .topimage-logoset
+      //- 先行発売
+      +picture(`index/index--en`, `png`, `DL Edition First Release( etc.)`)(class=`topimage-` id=`index-anime41`)
+
+      //- タイトルロゴ
+      +picture(`base/title-en`, `png`, `title name`)(class=`topimage-logo` id=`index-anime3`)
+
+      //- 発売日
+      +picture(`index/index-hatsubaibi-en`, `png`, `Jul xx, 2020 @x:xxpm(PDT) Release！`)(class=`topimage-hatsubai` id=`index-anime4`)
+
+    //- デスクトップ用左端キャッチフレーズ
+    .topimage-phrase-pc#index-anime6
+      +picture(`index/index-anime-text1-en`, `png`, `sample text`)
+
+
+  nav.index-nav: ul
+    mixin navli(filename, alt)
+      li: a(href=`${filename}.html`): img(src=`img/base/menu-${filename}.svg` alt=`${alt}`)
+    +navli(`story-en`, `Story`)
+    +navli(`character-en`, `Character`)
+    +navli(`gallery-en`, `Gallery`)
+    +navli(`download-en`, `Download`)
+    //- +navli(`special-en`, `Special`)
+
+
+  .pc-wrap-middle
+    //- 更新履歴
+    section.update-area.omikuji
+      h2: img(src=`img/index/omikuji-oshirase-en.svg` alt=`News`)
+      iframe.history(src=`iframe-update.html` width=`100%` height=`100%` lazyload=`on` lang=`ja`)
+
+    //- twitter
+    section.twitter-area.omikuji
+      h2: img(src=`img/index/omikuji-twitter-en.svg` alt=`Twitter`)
+      <a class="twitter-timeline" width="100%" height="100%" data-chrome=”noheader nofooter” data-theme="light" href="https://twitter.com/twittername" data-widget-id="xxxxxx">@twittername からのツイート</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+  //- スペック表
+  section.spec.omikuji
+    h2: img(src=`img/index/omikuji-siyou-en.svg` alt=`Specs`)
+    table: tbody
+      tr
+        th Release
+        td Jul xx, 2020 @x:xxpm(PDT) Release
+      tr
+        th Genre
+        td sample text
+      tr
+        th Releases
+        td DL Edition First Release( etc.)
+      tr
+        th Supported Language
+        td Japanese, English, Traditional Chinese, Simplified Chinese
+      tr
+        th Art
+        td: a(href=`http://sampleURL/` target=`_blank` rel=`noopener`) sample name 
+          i.fa.fa-home.fa-lg(aria-hidden=`true`)
+      tr
+        th Scenario
+        td: a(href=`https://twitter.com/twittername` target=`_blank` rel=`noopener`) sample name 
+          i.fa.fa-twitter.fa-lg(aria-hidden=`true`)
+      tr
+        th Coloring
+        td: a(href=`sampleURL` target=`_blank` rel=`noopener`) sample name 
+          i.fa.fa-twitter.fa-lg(aria-hidden=`true`)
+      tr
+        th OS
+        td Windows(8,8.1,10)
+      tr
+        th CPU
+        td Minimum: Pentium3 500MHz. Recommended: Pentium4 1.5GHz
+      tr
+        th HDD
+        td Unknown
+      tr
+        th Resolution
+        td 1024×768 65,536 colors or more
+      tr
+        th Memory Required
+        td Minimum: 256MB  Recommended: 512MB
+      tr
+        th Video Memory
+        td Minimum: 8MB Recommended: 16MB
+      tr
+        th DirectX
+        td 9.0c
+      tr
+        th Other
+        td Make sure your PC and peripherals are working normally
+      tr
+        th JAN Code
+        td  
+      tr
+        th Normal Edition
+        td Undecided
+      tr
+        th Limited Edition
+        td Undecided
+      tr
+        th PN
+        td  
+      tr
+        th Normal Edition
+        td 0000
+      tr
+        th Limited Edition
+        td 0000
+      tr
+        th  
+        td (Since game is still in development, the specifications are subject to change.)

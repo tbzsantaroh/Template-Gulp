@@ -1,0 +1,88 @@
+@charset 'utf-8';
+
+// 共通で使うカラーコードとか
+
+$color-shrine: adjust-hue(#da1f26, 220deg); // メインカラー レッド を色相変換
+$bg-color-main: #ff6299; // 背景色 メインカラー
+
+$link-color: #33ccff; // リンクの色
+$link-hover-color: #333399; // リンクhover時
+
+// mediaqueryのmixin
+
+// bootstrapのGridサイズに合わせる
+
+// モバイル縦幅の上限は420px前後。なので縦幅500px以上と指定すればモバイル以外用指定ができる。
+
+$breakpoints-min: (
+  "sm": "(min-width: 768px)",
+  "md": "(min-width: 992px)",
+  "lg": "(min-width: 1200px)"
+) !default;
+
+$breakpoints-max: (
+  "sm": "(max-width: 768px)",
+  "md": "(max-width: 992px)",
+  "lg": "(max-width: 1200px)"
+) !default;
+
+@mixin mediaqueries-min($breakpoint: md) {
+  @media #{map-get($breakpoints-min, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin mediaqueries-max($breakpoint: md) {
+  @media #{map-get($breakpoints-max, $breakpoint)} {
+    @content;
+  }
+}
+
+// テキストに2pxのアウトラインをかける
+// https://qiita.com/NoxGit/items/eb0904822c0f0fe97650
+
+@mixin bold-text-shadow($bcolor: #000) {
+  text-shadow: $bcolor 2px 0px, $bcolor -2px 0px, $bcolor 0px -2px,
+    $bcolor 0px 2px, $bcolor 2px 2px, $bcolor -2px 2px, $bcolor 2px -2px,
+    $bcolor -2px -2px, $bcolor 1px 2px, $bcolor -1px 2px, $bcolor 1px -2px,
+    $bcolor -1px -2px, $bcolor 2px 1px, $bcolor -2px 1px, $bcolor 2px -1px,
+    $bcolor -2px -1px;
+}
+
+// 画像の可変サイズ指定
+// extend用プロパティ
+._var-fit-img {
+  object-fit: contain;
+  width: 100%;  // object-fit有効にするためには幅指定が必須
+}
+
+// z-index重ね順用指定
+// extend用プロパティ
+._var-z-layer1 {
+  position: relative; // position指定しないとz-indexが反映されない
+  z-index: 1;
+}
+._var-z-layer2 {
+  position: relative;
+  z-index: 2;
+}
+._var-z-layer3 {
+  position: relative;
+  z-index: 3;
+}
+._var-z-layer4 {
+  position: relative;
+  z-index: 4;
+}
+._var-z-layer5 {
+  position: relative;
+  z-index: 5;
+}
+
+// z-index重ね順用指定
+// extend用プロパティ
+._var-tategaki {
+  font-feature-settings: 'pkna';  // 字詰め 縦書き向け
+  -ms-writing-mode: tb-rl;  // 縦書き IE向け
+  writing-mode: vertical-rl;  // 縦書き
+}

@@ -1,0 +1,27 @@
+<% const var_header = {
+  htmllang:'ja',
+  bodylang:'lang_ja',
+}; %><%# 日本語の場合、bodylang:'lang_ja'とつけるが、実際には.lang_jaというクラスは存在しない。空のままだとエラーになるので、とりあえず入れているだけのダミーclass %>
+
+<%- include('common/_header', {data:var_header}); %><%# 本文から上 header部分とbody sectionまで %>
+
+
+
+<h1>
+  <span class="h1normal">あなたは</span>
+  <span class="color18 size18">18<span class="size18small">歳以上</span></span>
+  <span class="h1normal">ですか？ </span>
+</h1>
+
+<p class="warning-general warning-off" id="warning">18歳未満の方の閲覧はご遠慮ください</p>
+
+<div class="btn-wrap">
+  <button class="over18" id="btnYes"><span class="btn-entext">YES</span><br>18歳以上です</button>
+  <button class="over18" id="btnNo"><span class="btn-entext">NO</span><br>18歳未満です</button>
+</div>  <!-- .btn-wrap -->
+
+<p class="warning">*当サイトは成人向けの情報を含むため、18歳未満の方の閲覧を固くお断りしています。</p>
+
+
+
+<%- include('common/_bottom_script', {}) %><%# 本文から下 スクリプトとhtml最後まで %>

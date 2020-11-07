@@ -1,0 +1,26 @@
+<% const var_header = {
+  htmllang:'zh-cmn-Hant',
+  bodylang:'lang_tc',
+}; %><%# 日本語の場合、bodylang:'lang_ja'とつけるが、実際には.lang_jaというクラスは存在しない。空のままだとエラーになるので、とりあえず入れているだけのダミーclass %>
+
+<%- include('common/_header', {data:var_header}); %><%# 本文から上 header部分とbody sectionまで %>
+
+
+
+<h1>
+  <span class="h1normal"><span class="color18 size18small">本網站包含的信息如果您未滿18歲則無法查看。</span><br>
+  請不要從這裡開始觀看18歲以下的人</span>
+</h1>
+
+<p class="warning-general warning-off" id="warning">請不要從這裡開始觀看18歲以下的人</p>
+
+<div class="btn-wrap">
+  <button class="over18" id="btnYes"><span class="btn-entext">YES</span></button>
+  <button class="over18" id="btnNo"><span class="btn-entext">NO</span></button>
+</div>  <!-- .btn-wrap -->
+
+<p class="warning"> </p>
+
+
+
+<%- include('common/_bottom_script', {}) %><%# 本文から下 スクリプトとhtml最後まで %>

@@ -1,0 +1,63 @@
+//- モバイル用フルスクリーンメニュー
+
+.spnav-wrap
+  //- CSSのチェックボックスでオンオフするやつ
+  input#tab-one(type=`checkbox` name=`tabs`)
+  //- 開閉ボタン
+  label(for=`tab-one`)
+    i(class=`fa fa-bars` aria-hidden=`true`)
+  //- チェックで内容を開閉
+  .spnav: header
+    //- .titlelogo: a(href=`index.html`): picture
+    //-   source(type=`image/webp` srcset=`img/base/title.webp`)
+    //-   img(src=`img/base/title.png` alt=`${siteTitle}`)
+    case lang
+      when 'en'
+        .titlelogo: a(href=`index-en.html`): picture
+          source(type=`image/webp` srcset=`img/base/title-en.webp`)
+          img(src=`img/base/title-en.png` alt=`${siteTitle}`)
+      when 'tc'
+        .titlelogo: a(href=`index-tc.html`): picture
+          source(type=`image/webp` srcset=`img/base/title.webp`)
+          img(src=`img/base/title.png` alt=`${siteTitle}`)
+      when 'sc'
+        .titlelogo: a(href=`index-sc.html`): picture
+          source(type=`image/webp` srcset=`img/base/title.webp`)
+          img(src=`img/base/title.png` alt=`${siteTitle}`)
+      default
+        .titlelogo: a(href=`index.html`): picture
+          source(type=`image/webp` srcset=`img/base/title.webp`)
+          img(src=`img/base/title.png` alt=`${siteTitle}`)
+
+    //- メニューのli部分 英字メニュー
+    mixin navlien(lang)
+      li: a(href=`index${lang}.html`): img(src=`img/base/menu-index-en.svg` alt=`TOP`)
+      li: a(href=`story${lang}.html`): img(src=`img/base/menu-story-en.svg` alt=`Introduction`)
+      li: a(href=`character${lang}.html`): img(src=`img/base/menu-character-en.svg` alt=`Character`)
+      li: a(href=`gallery${lang}.html`): img(src=`img/base/menu-gallery-en.svg` alt=`Gallery`)
+      li: a(href=`download${lang}.html`): img(src=`img/base/menu-download-en.svg` alt=`Download`)
+
+    //- メニューのli部分 日本語メニュー
+    mixin navlija
+      li: a(href=`index.html`): img(src=`img/base/menu-index.svg` alt=`トップ`)
+      li: a(href=`story.html`): img(src=`img/base/menu-story.svg` alt=`ストーリー`)
+      li: a(href=`character.html`): img(src=`img/base/menu-character.svg` alt=`キャラクター`)
+      li: a(href=`gallery.html`): img(src=`img/base/menu-gallery.svg` alt=`ギャラリー`)
+      li: a(href=`download.html`): img(src=`img/base/menu-download.svg` alt=`ダウンロード`)
+
+    //- スペシャルは日本語だけ表示の場合があるんで、別mixinで作る
+    mixin navlisp(linklang, imglang, imgalt)
+      li: a(href=`special${linklang}.html`): img(src=`img/base/menu-special${imglang}.svg` alt=`${imgalt}`)
+
+    nav: ul
+      case lang
+        when 'en'
+          +navlien(`-en`)
+        when 'tc'
+          +navlien(`-tc`)
+        when 'sc'
+          +navlien(`-sc`)
+        default
+          +navlija
+          //- +navlisp(``, ``, `スペシャル`)
+

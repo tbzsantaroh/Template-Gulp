@@ -1,0 +1,136 @@
+{
+  "pages": [
+    {
+      "id": "ev03",
+      "FileName": "ev03",
+      "FileHtmlLanguage": "ja",
+      "FileNameLanguage": "",
+      "CssFont": "",
+      "Msg": [
+        ["red", "名前2", "「sample text」"], 
+        ["gray", "名前1", "「sample text」"], 
+        ["red", "名前2", "「sample text」"], 
+        ["gray", "名前1", "「sample text」"], 
+        ["red", "名前2", "「sample text」"], 
+        ["red", "名前2", "「sample text」"], 
+        ["sample text"]
+      ]
+    },
+    {
+      "id": "ev03-en",
+      "FileName": "ev03",
+      "FileHtmlLanguage": "en",
+      "FileNameLanguage": "-en",
+      "CssFont": "",
+      "Msg": [
+        ["red", "name2", "“sample text”"], 
+        ["gray", "name1", "“sample text”"], 
+        ["red", "name2", "“sample text”"], 
+        ["gray", "name1", "“sample text”"], 
+        ["red", "name2", "“sample text”"], 
+        ["red", "name2", "“sample text”"], 
+        ["sample text"]
+      ]
+    },
+    {
+      "id": "ev03-tc",
+      "FileName": "ev03",
+      "FileHtmlLanguage": "zh-cmn-Hant",
+      "FileNameLanguage": "-tc",
+      "CssFont": "",
+      "Msg": [
+        ["red", "name2", "「sample text」"], 
+        ["gray", "名前1", "「sample text」"], 
+        ["red", "name2", "「sample text」"], 
+        ["gray", "名前1", "「sample text」"], 
+        ["red", "name2", "「sample text」"], 
+        ["red", "name2", "「sample text」"], 
+        ["sample text"]
+      ]
+    },
+    {
+      "id": "ev03-sc",
+      "FileName": "ev03",
+      "FileHtmlLanguage": "zh-cmn-Hans",
+      "FileNameLanguage": "-sc",
+      "CssFont": "",
+      "Msg": [
+        ["red", "名前2", "「sample text」"], 
+        ["gray", "名前1", "「sample text」"], 
+        ["red", "名前2", "「sample text」"], 
+        ["gray", "名前1", "「sample text」"], 
+        ["red", "名前2", "「sample text」"], 
+        ["red", "名前2", "「sample text」"], 
+        ["sample text"]
+      ]
+    },
+    {
+      "id": "ev04",
+      "FileName": "ev04",
+      "FileHtmlLanguage": "ja",
+      "FileNameLanguage": "",
+      "CssFont": "",
+      "Msg": [
+        ["blue", "名前3", "「sample text」"], 
+        ["blue", "名前3", "「sample text」"], 
+        ["sample text"], 
+        ["gray", "名前1", "「sample text」"], 
+        ["sample text"], 
+        ["blue", "名前3", "「sample text」"], 
+        ["gray", "名前1", "「sample text」"], 
+        ["sample text"]
+      ]
+    },
+    {
+      "id": "ev04-en",
+      "FileName": "ev04",
+      "FileHtmlLanguage": "en",
+      "FileNameLanguage": "-en",
+      "CssFont": "",
+      "Msg": [
+        ["blue", "name3", "“sample text”"], 
+        ["blue", "name3", "“sample text”"], 
+        ["sample text"], 
+        ["gray", "name1", "“sample text”"], 
+        ["sample text"], 
+        ["blue", "name3", "“sample text”"], 
+        ["gray", "name1", "“sample text”"], 
+        ["sample text"]
+      ]
+    },
+    {
+      "id": "ev04-tc",
+      "FileName": "ev04",
+      "FileHtmlLanguage": "zh-cmn-Hant",
+      "FileNameLanguage": "-tc",
+      "CssFont": ".space-massage{font-family:'Noto Sans TC',sans-serif;}",
+      "Msg": [
+        ["blue", "名前3", "「sample text」"], 
+        ["blue", "名前3", "「sample text」"], 
+        ["sample text"], 
+        ["gray", "名前1", "「sample text」"], 
+        ["sample text"], 
+        ["blue", "名前3", "「sample text」"], 
+        ["gray", "名前1", "「sample text」"], 
+        ["sample text"]
+      ]
+    },
+    {
+      "id": "ev04-sc",
+      "FileName": "ev04",
+      "FileHtmlLanguage": "zh-cmn-Hans",
+      "FileNameLanguage": "-sc",
+      "CssFont": ".space-massage{font-family:'Noto Sans SC',sans-serif;}",
+      "Msg": [
+        ["blue", "name3", "「sample text」"], 
+        ["blue", "name3", "「sample text」"], 
+        ["sample text"], 
+        ["gray", "名前1", "「sample text」"], 
+        ["sample text"], 
+        ["blue", "name3", "「sample text」"], 
+        ["gray", "名前1", "「sample text」"], 
+        ["sample text"]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+<% const var_header = {
+  html_lang:'en',
+  canonical_url:'https://sampleURL/subURL/gallery/ev01-en.html',
+	link_webfont:'',
+	css_webfont:'',
+  img_name:'01'
+}; %><%# 
+ html_lang:'ja', // 日本語 'ja'  英語 'en'  繁体 'zh-cmn-Hant'  簡体 'zh-cmn-Hans'
+  言語別のhtml langを一応つける。
+
+  canonical_url:'https://sampleURL/~.html'
+  実際に表示されるサーバのURLを絶対パスで入れる。AMPで絶対必要な仕様。
+
+	link_webfont: '<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">'	'<link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC&display=swap" rel="stylesheet">'
+	メッセージ部分にwebfontを読み込む場合、どのフォントを読み込むか指定する。指定しない場合は''だけで良し。
+
+	css_webfont: '.space-massage{font-family:"Noto Sans TC",sans-serif;}'	'.space-massage{font-family:"Noto Sans SC",sans-serif;}'
+	メッセージ部分で使用するwebfontを指定する。指定しない場合は''だけで良し。
+
+  img_name:'0x'
+  画像ファイル名を入れる。 011 012 021 022 みたいな感じで。
+  下一桁がマウスカーソル合わせる前と合わせた後の数字。
+  上二桁がファイル数。
+ %>
+
+
+<%- include('component/_ev-header', {data:var_header}); %><%# 本文から上 %>
+<!-- ここからテキスト -->
+<p class="name red">name2</p>
+	<p class="text">“sample text”</p>
+
+<p class="name gray">name1</p>
+	<p class="text">“sample text”</p>
+
+<p class="novoice">sample message</p>
+
+<!-- ここまでテキスト -->
+<%- include('component/_ev-footer', {}) %><%# 本文から下 evページはfooter無いけど便宜上このファイル名にしてる %>

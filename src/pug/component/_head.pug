@@ -1,0 +1,106 @@
+//- ヘッダー
+//- index時に/になる設定のためにcase作りまくるより、${dirpass}${filename}${canolang}を1コの変数にしておいて、最初に言語で切り替えたほうがいいかも
+
+head(prefix=`og: https://ogp.me/ns#  article: https://ogp.me/ns/article#`)
+  meta(charset=`utf-8`)
+  title #{siteTitle}
+
+  //- canonicalはindex日本語ページの場合のみ/にする
+  case lang
+    when 'ja'
+      case filename
+        when 'index'
+          link(rel=`canonical` href=`https://sampleURL/subURL/${dirpass}`)
+        default
+          link(rel=`canonical` href=`https://sampleURL/subURL/${dirpass}${filename}${canolang}.html`)
+    default
+      link(rel=`canonical` href=`https://sampleURL/subURL/${dirpass}${filename}${canolang}.html`)
+
+  meta(name=`viewport` content=`width=device-width,minimum-scale=1,initial-scale=1,viewport-fit=cover`)
+
+  //- モバイル用 ノッチカラー指定
+  meta(name=`mobile-web-app-capable` content=`yes`)
+  meta(name=`mobile-web-app-status-bar-style` content=`black-translucent`)
+  meta(name=`apple-mobile-web-app-capable` content=`yes`)
+  meta(name=`apple-mobile-web-app-status-bar-style` content=`black-translucent`)
+
+  meta(name=`description` content=`${siteDescription}`)
+
+  //- OGデータ
+  meta(property=`og:title` content=`${siteTitle}`)
+  meta(property=`og:description` content=`${siteDescription}`)
+  meta(property=`og:type` content=`website`)
+  meta(property=`og:image` content=`https://sampleURL/subURL/img/ogp/ogp-icon.png`)
+
+  //- canonicalと一緒でindex日本語ページの場合のみ/にする
+  case lang
+    when 'ja'
+      case filename
+        when 'index'
+          meta(property=`og:url` content=`https://sampleURL/subURL/${dirpass}`)
+        default
+          meta(property=`og:url` content=`https://sampleURL/subURL/${dirpass}${filename}${canolang}.html`)
+    default
+      meta(property=`og:url` content=`https://sampleURL/subURL/${dirpass}${filename}${canolang}.html`)
+
+  //- facebookID いいねボタンのために必要
+  meta(property=`fb:app_id` content=`xxxxxx`)
+
+  //- twitter card用OGデータ
+  meta(name=`twitter:card` content=`summary_large_image`)
+  meta(name=`twitter:site` content=`@twittername`)
+  meta(name=`twitter:creator` content=`@twittername`)
+
+  //- 多言語ページ用指定
+  //- indexページの場合のみ/にする
+  case filename
+    when 'index'
+      link(rel=`alternate` hreflang=`ja` href=`https://sampleURL/subURL/${dirpass}`)
+    default
+      link(rel=`alternate` hreflang=`ja` href=`https://sampleURL/subURL/${dirpass}${filename}.html`)
+
+  link(rel=`alternate` hreflang=`en` href=`https://sampleURL/subURL/${dirpass}${filename}-en.html`)
+  link(rel=`alternate` hreflang=`zh-Hant` href=`https://sampleURL/subURL/${dirpass}${filename}-tc.html`)
+  link(rel=`alternate` hreflang=`zh-Hans` href=`https://sampleURL/subURL/${dirpass}${filename}-sc.html`)
+
+  link(rel=`icon` href=`favicon.ico`)
+
+  link(href=`${dirpass}css/bootstrap-reboot.min.css` rel=`stylesheet`)
+  link(href=`https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css` rel=`stylesheet`)
+
+  //-
+    storyの説明文用フォント
+    まずファイル名が story の場合で分岐、その後各言語でファイルを切り替える。en はフォントファイルが必要無いのでdefaultに分岐する。
+  case filename
+    when 'story'
+      case lang
+        when 'tc'
+          link(href="https://fonts.googleapis.com/css?family=Noto+Serif+TC:700&display=swap" rel="stylesheet")
+        when 'sc'
+          link(href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:700&display=swap" rel="stylesheet")
+        when 'ja'
+          link(href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:700&display=swap" rel="stylesheet")
+        default
+          - break
+    default
+      - break
+
+  //- 言語別フォント指定
+  case lang
+    when 'tc'
+      link(href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet")
+    when 'sc'
+      link(href="https://fonts.googleapis.com/css?family=Noto+Sans+SC&display=swap" rel="stylesheet")
+    default
+      - break
+
+  //- lightbox用スタイルシート
+  link(href=`https://cdnjs.cloudflare.com/ajax/libs/lightcase/2.5.0/css/lightcase.min.css` rel=`stylesheet`)
+
+  //- ユーザースタイルシート
+    characterは3以外共通css
+  case filename
+    when 'character2'
+      link(href=`${dirpass}css/character.css` rel=`stylesheet`)
+    default
+      link(href=`${dirpass}css/${filename}.css` rel=`stylesheet`)

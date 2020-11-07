@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html amp lang="<%- data.html_lang %>"><%# いちおう言語別lang設定入れる %>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+	<title>Event CG</title>
+  <link rel="canonical" href="<%- data.canonical_url %>"><%# 絶対必須な設定 アップロード先のURLを絶対パスで入れる %>
+	<%- data.link_webfont %><%# web font入れるとこ %>
+  <style amp-custom>.amp-img-wrap{position:absolute;top:0;width:100%}.amp-img-wrap:hover{opacity:0}.flash:hover{animation:a 1s linear}@keyframes a{0%{opacity:0}to{opacity:1}}.space-massage{background:rgba(0,0,0,.6);bottom:0;color:#fff;font-family:Yu Gothic,Meiryo,sans-serif;height:30%;overflow:auto;position:fixed;text-shadow:1px 0 2px #000,-1px 0 2px #000,0 1px 2px #000,0 -1px 2px #000;width:100%}@media (max-width:1023px){.space-massage{height:calc(100vh - 56vw)}}.closebtn{bottom:0;color:#fff;cursor:pointer;display:inline;line-height:0;margin-left:.3em;padding-bottom:1.5em;position:fixed;text-shadow:1px 0 0 #000,-1px 0 0 #000,0 1px 0 #000,0 -1px 0 #000,5px 5px 0 #fff;z-index:1}.closebtn:hover{text-shadow:1px 0 0 #000,-1px 0 0 #000,0 1px 0 #000,0 -1px 0 #000,3px 3px 0 #fff}.closebtn::selection{background:transparent;color:transparent}@media (max-width:1023px){.closebtn{display:none}}.closebtn-input,.closebtn-input+.space-massage{display:none}.closebtn-input:checked+.space-massage{display:block}.name{font-weight:700;margin:.5em 0 .2em 2em}@media (max-width:1023px){.name{margin:.5em 0 .2em}}.red{color:#f36}.blue{color:#66ffff}.green{color:#a2ff10}.purple{color:#9f6aff}.gray{color:#b0b0b0}.red{color:#f64847}.text{font-size:.9rem;margin:0 1em 0 2.3em}@media (max-width:1023px){.text{margin:0 0 0 .3em}}.novoice{color:#ddd;font-size:.8em;margin:.5em 1em 0 3em}@media (max-width:1023px){.novoice{margin:.5em 0 0 1em}}<%- data.css_webfont %></style><%# ユーザーCSS %><%# 最後にwebfont用の指定あり %>
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript><%# AMPページ用設定 必ず必要 %>
+  <script async src="https://cdn.ampproject.org/v0.js"></script><%# AMPページ用js 必ず必要 %>
+</head>
+<body>
+<article>
+
+<%# 1280x720の画像のみ対応 webp => jpegの順に優先表示 %>
+<div class="space-cg flash"><%# 画像スペース %>
+	<div class="amp-img-wrap"><amp-img
+		alt="Event CG1"
+		width="1280"
+		height="720"
+		layout="responsive"
+		src="../img/gallery/ev<%- data.img_name %>2.webp">
+		<amp-img alt="Event CG1"
+			fallback
+			width="1280"
+			height="720"
+			layout="responsive"
+			src="../img/gallery/ev<%- data.img_name %>2.jpg"></amp-img>
+	</amp-img></div>
+
+  <div class="amp-img-wrap"><amp-img alt="Event CG2"
+		width="1280"
+		height="720"
+		layout="responsive"
+		src="../img/gallery/ev<%- data.img_name %>1.webp">
+		<amp-img alt="Event CG2"
+			fallback
+			width="1280"
+			height="720"
+			layout="responsive"
+			src="../img/gallery/ev<%- data.img_name %>1.jpg"></amp-img>
+	</amp-img></div>
+</div><%# .space-cg .flash %>
+
+<div class="wrap-space-massage"><%# テキストスペース %>
+
+<label for="msgbox" class="closebtn" title="switch window">■</label><%# 閉じるボタン %>
+<input type="checkbox" id="msgbox" class="closebtn-input" checked/><%# 隣接セレクタを使ってるので必ず  .closebtn-input の下に .space-massage を配置する %>
+
+<div class="space-massage"><%# 隣接セレクタを使ってるので必ず  .space-massage の上に .closebtn-input を配置する %>

@@ -1,0 +1,16 @@
+// 共通で使うカラーコードとか
+$over18color: #ff6aa6;  // 18歳以上のカラー
+$btnYescolor: #333; // Yesボタンの色
+$btnNocolor: #444;  // Noボタンの色
+
+
+// フォントサイズ
+$fontsizeBody: 1rem;  // bodyにつけるベースフォントサイズ 日本語では使ってない
+$fontsizeh1normal: 1rem;  // 日本語 上下の黒字文字
+$fontsizesize18: 7rem;  // 18のとこ
+$fontsizesize18small: 4rem;  // 歳以上のとこ
+$fontsizesize18smallen: 2rem;  // 英字版 ピンク背景のテキスト
+$fontsizesize18smalltc: 2rem;  // 繁体版 ピンク背景のテキスト
+$fontsizebtnentext: 2.5rem; // YesとNoボタン
+$fontsizewarninggeneral: 1rem;  // NOボタン押したら表示されるテキスト
+$fontsizewarning: .7rem; // 一番下の警告文字

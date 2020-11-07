@@ -1,0 +1,23 @@
+</div><%# .footerbottomwrap %><%# .footerbottomwrap はfooter下寄せのためのラッパー %>
+<footer>
+  <div class="share"></div><%# SNSボタン %>
+
+  <a href="https://sampleURL/" target="_blank"><%# コピーライト %>
+    <img src="img/base/sample-logoSVGwh.svg" alt="<%- data.logo_alt %>"><br>
+    <small id="bottom-scroll">&copy; 2020 sampleURL ALL RIGHTS RESERVED.</small>
+  </a>
+
+  <p class="return_to_top"><a href="html" data-scroll><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></a></p><%# 上に戻るボタン %>
+</footer>
+
+<%# javascriptライブラリ %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.4.1/jquery-migrate.min.js" charset="utf-8"></script><%# jQueryバージョン差補完 %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsSocials/1.5.0/jssocials.min.js" charset="utf-8"></script><%# SNSボタン %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightcase/2.5.0/js/lightcase.min.js" charset="utf-8"></script><%# lightbox %>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script><%# cookie consent %>
+<script src="js/cookiepass/CookiePass<%- data.cookiepass_lang %>.js" charset="utf-8"></script><%# 年齢確認 %><%# 各言語別でファイル名違いあり %>
+<script src="js/sweet-scroll/sweet-scroll.min.js" charset="utf-8"></script><%# スムーズスクロール %>
+<%- data.jsload_before %>
+<script src="js/AllPage.js" charset="utf-8"></script><%# jsまとめて設定 %>
+<%- data.jsload_after %>

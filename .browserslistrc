@@ -1,0 +1,8 @@
+# Autoprefixer用ブラウザリスト
+last 2 Chrome versions
+last 2 firefox versions
+last 1 Edge versions
+last 1 ie versions
+last 2 ChromeAndroid versions
+last 2 iOS versions
+not ie <= 10

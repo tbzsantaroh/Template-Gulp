@@ -1,0 +1,424 @@
+// @import "import/normalize"; // ノーマライズはwebfontやアイコンより上位にしないとダメなのでここには混ぜれない
+@import "import/js-cookieconsent2"; // js cookie警告ポップアップ
+@import "import/js-jssocials";  // js SNS共有ボタン
+@import "import/_js-jssocials-theme-plain";  // js SNS共有ボタン プレーンテーマ
+//@import "import/js-lightcase";  // js ポップアップ アイコンの読み込みパスが相対指定なのでcdnから引っ張るか、こっち修正するかしないと無理
+
+@import "import/variable";  // 共用変数 色とか
+@import "import/base";  // 共通CSS
+
+
+
+body {
+  background: {
+    attachment: fixed;
+    image: url('../img/index/MainVisual_mobile.jpg');
+    position: center top;
+    repeat: no-repeat;
+    size: contain;
+  }
+}
+@include mediaqueries-min($breakpoint: md) {
+  body {
+    background: {
+      image: url('../img/index/MainVisual_full-size.jpg');
+      position: center center;
+      size: cover;
+    }
+  }
+}
+
+@include mediaqueries-min($breakpoint: md) {  // PC indexのみ言語セレクトを左上に寄せる
+  .lang-select {
+    top: 0vh;
+    position: absolute;
+  }
+}
+
+
+
+/* トップ画像
+----------------------------- */
+.bg-white { // body background-image を白からフェードアウトするためのやつ
+    background: #fff;
+    width: 100vw;
+    height: 120vh;
+    display: block;
+    position: fixed;
+    z-index: 13;
+
+    opacity: 0;
+}
+
+.topimage {
+  height: 110vw;  // だいたい画像の切れ目に合わせる
+  position: relative; // タイトルロゴをabsoluteで下寄せするためにここにrelative
+}
+@include mediaqueries-min($breakpoint: md) {
+  .topimage {
+    height: 90vh;
+  }
+}
+
+.topimage-text {
+  display: block; // opacityアニメーションのためにつける
+  img {
+    margin: 20% 8% 0;
+    width: 12%;
+  }
+}
+.topimage-phrase {  // キャッチフレーズのためにclass作り直し
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;  // てきとうに白背景より上にする
+  background-color: white;
+  img {
+    width: auto;
+    height: 80vh;
+  }
+
+  .lang_en & {  // 英字ページ用設定
+    img {
+      width: 90vw;
+      height: auto;
+    }
+  }
+}
+@include mediaqueries-min($breakpoint: md) {
+  .topimage-phrase {  // キャッチフレーズのためにclass作り直し
+    display: none;
+  }
+}
+
+
+.topimage-logoset { // 先行とタイトルロゴと発売日セット absoluteでまとめて位置調整
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+@include mediaqueries-min($breakpoint: md) {
+  .topimage-logoset {
+    bottom: 12vh;
+    left: auto;
+    right: 21vw;
+  }
+}
+
+.topimage-steam {
+  display: block; // opacityアニメーションのためにつける
+  img {
+    width: 40%;
+    margin: 0 auto -4% 5%;
+    display: block;
+    position: relative;
+    z-index: 2;
+  }
+
+  .lang_en & {  // 英字ページ用設定
+    img {
+      width: 50%;
+      margin: 0 15% -3% auto;
+    }
+  }
+}
+
+.topimage-logo {
+  display: block; // opacityアニメーションのためにつける
+  img {
+    width: 85%;
+    margin: auto;
+    display: block;
+    position: relative; // absoluteで下にしたほうがいい
+    z-index: 1;
+  }
+
+  .lang_en & {  // 英字ページ用設定
+    img {
+      width: 100%;
+    }
+  }
+}
+@include mediaqueries-min($breakpoint: md) {
+  .topimage-logo {
+    img {
+      width: 30vw;
+    }
+  }
+}
+
+.topimage-hatsubai {
+  display: block; // opacityアニメーションのためにつける
+  img {
+    width: 55%;
+    margin: -3% 3% 0 auto;
+    display: block;
+    position: relative;
+    z-index: 2;
+  }
+
+  .lang_en & {  // 英字ページ用設定
+    img {
+      width: 40%;
+      margin: -5% 15% 0 auto;
+    }
+  }
+  .lang_tc & {  // 繁体字ページ用設定
+    img {
+      margin: -5% 3% 0 auto;
+    }
+  }
+  .lang_sc & {  // 簡体字ページ用設定
+    img {
+      margin: -5% 3% 0 auto;
+    }
+  }
+}
+
+.topimage-phrase-pc { // PC用左端キャッチフレーズ
+  display: none;
+}
+@include mediaqueries-min($breakpoint: md) {
+  .topimage-phrase-pc { // PC用左端キャッチフレーズ
+    opacity: 0; // アニメーションで表示されるから追加してる初期値
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 27%;
+    transform: translate(-27%, -50%);
+    z-index: 20;  // てきとうに白背景より上にする
+    background-color: white;
+    img {
+      width: auto;
+      height: 70vh;
+    }
+
+    .lang_en & {  // 英字ページ用設定
+      top: 30%;
+      left: 15%;
+      background-color: rgba(256, 256, 256, .7);
+      border-radius: 15px;
+      border: 5px double #333;
+      padding: .3%;
+      img {
+        width: 22vw;
+        height: auto;
+      }
+    }
+  }
+}
+
+
+/* index用メニュー
+----------------------------- */
+.index-nav {
+  position: relative;
+  z-index: 2;
+  a {
+    padding: .5rem;
+    display: block;
+    width: 45vw;
+    text-align: center; // 子要素の画像センタリング
+    
+    transition: all .2s ease-out;
+    background: #fff;
+    margin: .2rem .15rem;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top: 5px solid $color-shrine;
+    box-shadow: 0 1px 4px #555;
+    &:hover {
+      transform: translateY(2px);
+      box-shadow: 0 0 3px #111;
+    }
+  }
+  
+  ul {
+    padding: .5rem 0;
+    margin: 0 0 3vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+  }
+  li {
+
+  }
+
+  img {
+    width: 30vw; // 文字画像サイズ
+//    filter: drop-shadow(2px 2px 0 #fff);  // 画像にドロップシャドウ
+  }
+}
+@include mediaqueries-min($breakpoint: md) {
+  .index-nav {
+    a {
+      width: 23vw;
+    }
+    img {
+      width: 10vw; // 文字画像サイズ
+    }
+  }
+
+
+}
+
+
+
+
+/* 枠
+----------------------------- */
+.omikuji {
+  $bg-white: #faf6ef;  // 背景の白色
+
+
+  margin: 3rem 4vw;
+  padding: 0 0 10%;  // 下段のロゴのためにマージン確保
+  border-bottom: 1vh solid $color-shrine;
+  background: {
+    image: url('../img/base/omikuji-logo.svg');
+    position: center bottom;
+    repeat: no-repeat;
+    size: contain;
+    color: $bg-white;
+  }
+  box-shadow:
+  0 0 0 1px $color-shrine,
+  0 0 0 3px $bg-white,
+  0 0 0 7px $color-shrine,
+  0 0 0 12px $bg-white; // 枠
+
+  h2 {
+    font: {
+      size: 4rem;
+      weight: 800;
+    }
+    font-feature-settings : "palt"; // CSS適当カーニング
+    letter-spacing: .5rem;
+
+    background: $color-shrine;
+    color: $bg-white;
+    text-align: center;
+    border: 5px solid $bg-white; // 検証めんどいのでborderでマージンつける
+  }
+}
+
+
+/* ついったー部分
+----------------------------- */
+.twitter-area {
+  h2 {
+    letter-spacing: 0;
+  }
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  iframe {
+    margin: auto;
+    text-align: center;
+    width: auto;
+  }
+
+
+}
+
+
+/* 更新情報
+----------------------------- */
+.history {
+  margin: 3% 0;
+  height: 20vh;
+  overflow: auto;
+
+  border: none;
+}
+
+// PC向け grid使って横に2つ並べるやつ -----まだ未調整
+@include mediaqueries-min($breakpoint: md) {
+  .pc-wrap-middle {
+    .twitter-area {  grid-area: twitter;}
+    .update-area {  grid-area: update;}
+  
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "update twitter";
+
+    justify-content: center;
+  }
+
+  .twitter-area, .update-area, .spec {
+    // background: #eee;
+    // border: 1px solid #ccc;
+  }
+
+}
+
+
+
+/* スペックシート
+----------------------------- */
+$table-border-color: #000;  // テーブルのボーダー色
+
+.spec {
+  font: {
+    family: "Yu Gothic", sans-serif;
+    weight: 800;
+  }
+}
+
+
+
+table {
+  padding: 1% 0%;
+  margin: auto 2%;
+  font: {
+    size: calc(100vw / 30);  // .8rem
+  }
+
+  $link-color: #444;
+  & a:link {
+    transition: all .1s linear;
+    color: $link-color;
+  }
+  & a:hover {
+    color: darken($link-color, 50%);
+    text-shadow: 0 0 15px $link-color;
+  }
+
+  th {
+    text-align: left;
+    font: {
+      weight: bold;
+    }
+    padding: .5em .5em .5em 0;
+  }
+  td {
+    padding: .5em 0 .5em 1%;
+    border-left: 3px solid $table-border-color;
+  }
+}
+
+
+
+
+
+@include mediaqueries-min($breakpoint: md) {
+  .spec {
+    max-width: 40rem;
+    margin: auto;
+  }
+  table {
+    font: {
+      size: 1rem;
+    }
+
+  }
+}
+
+
+
+

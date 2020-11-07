@@ -1,0 +1,105 @@
+<%# 変数 %>
+<% const var_header = {
+  html_lang:'ja',
+  ogp_prefix:'article',
+  head_rooturl:'https://sampleURL/subURL/',
+  head_pageurl:'story',
+  head_pageurllang:'',
+  head_pagetitle:'ストーリー',
+  head_pagetitlespacer:' | ',
+  css_webfont:'<link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:700&display=swap" rel="stylesheet">',
+  body_pagelang:''
+}; %><%#
+  html_lang:'ja', // 日本語 'ja'  英語 'en'  繁体 'zh-cmn-Hant'  簡体 'zh-cmn-Hans'
+  言語別のhtml langを一応つける。
+
+  head_pageurllang:'', // 日本語 ''  英語 '-en'  繁体 '-tc'  簡体 '-sc'
+  言語別にURLが違う用
+
+  head_pagetitlespacer:' - ', // index ''   その他のページ ' - '
+  ページタイトルの間の - 部分。indexは必要ないので何も入れない。
+
+  body_pagelang:'', // 日本語 ''  英語 ' lang_en'  繁体 ' lang_tc'  簡体 ' lang_sc'
+  bodyについてるclass 各CSSで言語別指定に使う。 必ず最初にスペースをつける。
+ %>
+<%# css_webfont はstoryの説明文用 %>
+
+<% const var_mainmenu = {
+  TitlelogoAlt:'タイトルロゴ画像のaltここ',
+  MainmenuUrl:'',
+  MainmenuAlt:['トップ', 'ストーリー', 'キャラクター', 'ギャラリー', 'ダウンロード', 'スペシャル'],
+  PageUrl:'story'
+}; %><%#
+  TitlelogoAlt:'日本語のタイトルalt', // 日本語 '日本語のタイトルalt'  英語 '英語のタイトルalt'  繁体 '繁体のタイトルalt'  簡体 '簡体のタイトルalt'
+  タイトルロゴ画像のalt
+
+  MainmenuUrl:'', // 日本語 ''  英語 '-en'  繁体 '-tc'  簡体 '-sc'
+  メインメニューのリンク先URL
+
+  MainmenuAlt: ['トップ', 'ストーリー', 'キャラクター', 'ギャラリー', 'ダウンロード', 'スペシャル'], // 日本語 ['トップ', 'ストーリー', 'キャラクター', 'ギャラリー', 'ダウンロード', 'スペシャル']  英語その他 ['TOP', 'Introduction', 'Character', 'Gallery', 'Download', 'Special']
+  メインメニューのalt
+
+  head_pageurl:'story',
+  言語セレクトボタンのジャンプ先URL indexの場合は何もなし。
+ %>
+
+<% const var_footer = {
+  logo_alt:'ロゴ画像のalt',
+  cookiepass_lang:'',
+  jsload_before:'',
+  jsload_after:''
+}; %><%#
+  logo_alt:'ロゴ画像のalt',  // 日本語 'ロゴ画像のalt'  英語その他 '英語その他言語のロゴ画像alt'
+  ロゴ画像のalt
+
+  cookiepass_lang:'', // 日本語 ''  英語 '-en'  繁体 '-tc'  簡体 '-sc'
+  年齢確認ポップアップの言語別指定
+
+  jsload_before'',  // AllPage.js より前に読み込むjavascriptライブラリ
+  jsload_after'',  // AllPage.js より後に読み込むjavascriptライブラリ
+ %>
+
+<%- include('component/_header', {data:var_header}); %><%# 最上部からbodyタグまで %>
+<%- include('component/_mainmenu', {data:var_mainmenu}) %><%# メインメニューと言語セレクタ %> <%# これ日本語メニュー %>
+<%#
+
+
+---ここから本文---
+
+
+ %>
+
+
+
+<article>
+  <p>例文こ↑こ↓</p>
+</article>
+
+
+
+
+<%#
+
+
+---ここまで本文---
+
+
+ %>
+<%- include('component/_footer', {data:var_footer}) %><%# footer以下 %>
+<%# ページ別javascriptを追加するときはここに書く %><%#
+<script type="text/javascript">
+$(function(){
+  $('.page_popup').lightcase({
+    shrinkFactor: 1,
+    maxWidth: 1024,
+    maxHeight: 768,
+    iframe: {
+      width: '1024',
+      height: '1400'
+    }
+  });
+});
+</script>
+ %>
+</body>
+</html>

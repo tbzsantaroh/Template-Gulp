@@ -1,0 +1,59 @@
+extends template/_iframe.pug
+
+block varlist
+  //- タイトル
+  - const siteTitle = 'タイトル名';
+
+  //- galleryとかの下層ディレクトリ指定
+  - const dirpass = '';
+
+
+
+//- headの追加部分
+block appendhead
+  //- アイコンフォント
+  link(href=`https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css` rel=`stylesheet`)
+
+  //- ダウンロードページのcssに統合してるぶん使うためにここに追加
+  link(href=`${dirpass}css/download.css` rel=`stylesheet`)
+
+  //- これdownload.cssに書けばよくね？
+  style body { background: #faf6ef; }
+
+
+
+//- メインコンテンツ
+block mainblock
+  // 体験版リスト
+  // iframeを使用しているため、リンクをそのまま貼るとフレーム内で開いてしまいます。必ず target="_***" を付けてください。
+  // 新しいタブで開く場合は target="_blank" を、同一タブで開く場合は target="_top" を付けてください。
+
+
+  // 鯖リストここから
+  table
+    thead: tr
+      th SERVER
+      th File List
+      th Link Page
+
+    tbody
+      tr
+        +tdserver(`http://sampleURL`, `サンプルリスト`)
+        +tdfile(`http://sampleURL.zip`)
+        +tdmaker(`http://sampleURL.html`)
+
+      tr
+        +tdserver(`https://sampleURL/`, `サンプルリスト`)
+        +tdfile(`http://sampleURL.zip`)
+        +tdmaker(`https://sampleURL`)
+
+      tr
+        +tdserver(`https://sampleURL/`, `サンプルリスト`)
+        +tdfile(`https://sampleURL.zip`)
+        +tdmaker(`https://sampleURL`)
+
+      tr
+        +tdserver(`https://sampleURL/`, `サンプルリスト`)
+        +tdfile(`https://sampleURL.zip`)
+        +tdmaker(`https://sampleURL.html`)
+

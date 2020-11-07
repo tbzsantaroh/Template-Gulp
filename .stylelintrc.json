@@ -1,0 +1,6 @@
+{
+  "rules": {
+    "no-extra-semicolons": true,
+    "color-hex-length": "short"
+  }
+}

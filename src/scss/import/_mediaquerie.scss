@@ -1,0 +1,172 @@
+
+/* 解像度のメディアクエリ切り替え
+----------------------------- */
+
+
+.firstlogo {  // 最初のロゴ
+  @include mediaqueries-min() {
+    animation: anime-FadeInOutPC 3s linear forwards;
+  }
+}
+
+.toriisvg {  // ズーム
+  @include mediaqueries-min() {
+    animation: anime-ZoomPC 10s ease-out 4s forwards;
+  }
+}
+
+
+
+.anitext {  // テキスト
+  @include mediaqueries-min() {
+    font: {
+      size: calc(100vw / 45);
+    }
+  }
+}
+.serif-wf {  // webfont はんなり明朝使ってるひらがなのとこ
+  @include mediaqueries-min() {
+    font: {
+      size: calc(100vw / 48);
+    }
+  }
+}
+
+
+
+.tachie {  // 立ち絵
+  @include mediaqueries-min() {
+    // センタリング位置調整 縦長絵を横長モニタに出すとキレるから
+    top: 70%;
+    transform: translate(-50%, -50%) scale(1, 1);  // ついでにscale調整
+
+    animation: anime-FuwafuwaPC 5s linear 15s infinite alternate forwards,
+      anime-PopOnPC 2s ease-out 13s 1 normal backwards;
+  }
+}
+
+.title-area {  // アニメーション終了後のレイアウト用マージン領域
+  @include mediaqueries-min() {
+    @keyframes height-fix {  // タイトルロゴの位置調整
+      from {
+        height: 90vh;  // AMPではtransformとopacity以外のkyeframesできないからエラー出るかも
+        grid-template-rows: 100vh;
+      }
+      to {
+        height: 40vh;
+        grid-template-rows: auto;
+      }
+    }
+    animation: height-fix 1ms linear 14.5s both;
+  }
+}
+
+
+.title-logo {  // タイトルロゴ
+  @include mediaqueries-min() {
+    width: 55%;
+    max-width: 876px;  // source解像度以上デカくしてはいけない(戒め)
+  }
+}
+
+
+
+h2 {  // specタイトル
+  @include mediaqueries-min() {
+    font: {
+      size: .9rem;
+    }
+    letter-spacing: 1em;
+    margin: 20% auto 0;
+    width: 40%;
+    border-radius: 15px;
+  }
+}
+
+.spec {  // spec表
+  @include mediaqueries-min() {
+    margin: 0 auto 3em;
+    padding: 1em 0;
+    width: 80%;
+    background: none;
+  }
+}
+
+table {  // テーブル文字サイズ
+  @include mediaqueries-min() {
+    font: {
+      size: .9rem;
+      family: 'Yu Gothic', sans-serif;
+      weight: bold;
+    }
+    letter-spacing: 0em;
+    padding: 1em 10%;
+    
+    background: rgba(255, 255, 255, .9);
+    border-radius: 15px;
+    border: 1px solid #000;
+  }
+}
+
+th {
+  @include mediaqueries-min() {
+    padding: .1em 1em .1em 0;
+  }
+}
+td {
+  @include mediaqueries-min() {
+    padding: .1em 0 .1em 1em;
+    border-left: 3px solid $table-border-color;
+  }
+}
+
+
+footer {
+  @include mediaqueries-min() {
+    amp-img {
+      width: 295px;
+      margin: 0 auto .5em;
+    }
+  }
+}
+
+
+
+
+
+
+/* スマホ横向き時レイアウト
+* ファブレット級が横持ち時縦幅414pxなので、多めに見て、500px確保しとく
+----------------------------- */
+@media (max-height: 500px) {
+
+  .title-area {
+    height: auto;
+    width: 100vw;
+
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: auto;
+  }
+  
+  .title-logo {
+    width: 70%;
+    margin: 2em 0 5em;
+  }
+
+
+  .anitext {
+    font: {
+      size: calc(100vw / 25);
+    }
+    height: -50vh;
+
+  }
+  .serif-wf {  // webfont はんなり明朝使ってるひらがなのとこ
+    font: {
+      size: calc(100vw / 28);
+    }
+  }
+
+
+}

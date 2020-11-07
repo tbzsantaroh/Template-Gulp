@@ -1,0 +1,232 @@
+
+
+.over18 {
+  color: $over18color;
+}
+
+
+/* 全体設定
+----------------------------- */
+body {
+  background: rgba(256, 256, 256, .95);
+  color: #111;
+  font-size: $fontsizeBody;
+  
+  animation: bodyanime .5s ease-in 1;
+  @keyframes bodyanime {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+.popErase {  // jsでポップアップウィンド非表示にする用
+  display: none;
+}
+
+
+/* ポップアップウィンドの設定
+----------------------------- */
+section {
+  background: #fff;
+
+//  box-shadow: 0 0 30px 5px rgba(0, 0, 0, .2);
+  border: 1px solid #ccc;
+  
+  width: 85%;
+  max-width: 1024px;
+  margin: 1% auto 0;
+  padding: 1% 2%;
+  text-align: center;
+
+  // アニメーション
+  animation: sectionanime .5s ease-in 1;
+  @keyframes sectionanime {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.windowclose {  // Yes押した後のアニメーション bodyとsectionに使ってる
+  animation: windowcloseanime .5s ease-in 1;
+  @keyframes windowcloseanime {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
+}
+
+
+
+/* タイトルテキストのとこ
+----------------------------- */
+h1 {
+  margin: 0;
+  color: #333;
+  line-height: 1;
+  overflow: hidden;  // 18歳以上 の背景色がはみ出るのをカット
+  font: {
+    family: "YuMincho", serif, sans-serif;
+//    size: calc(100vw / 30); // calc(100vw / 30) ここ日本語では使われない
+    weight: normal;
+  }
+
+  display: inline-block;
+
+}
+
+.h1normal {  // 上下の黒字
+  font: {
+    weight: bold;
+    size: $fontsizeh1normal; // calc(100vw / 25)
+  }
+  letter-spacing: .2em;
+  display: block;
+  text-align: left;
+  margin: .5em 0;
+  .lang_en & {  // 英字ページ修正
+    letter-spacing: 0;
+  }
+
+}
+.h1normal:last-of-type {
+  text-align: right;
+  .lang_en & {  // 英字ページ修正
+    text-align: left;
+  }
+  .lang_tc &, .lang_sc & {  // 繁体簡体ページ修正
+    text-align: center;
+  }
+}
+
+
+
+.color18 {
+  background: $over18color;
+  color: lighten($over18color, 100%);  // 輝度100%上げて白にしてる 黒にしたいときは darken 100%
+  display: inline-block;
+}
+
+.size18 {  // 18のとこ
+  font-size: $fontsizesize18; // calc(100vw / 5.5)
+  letter-spacing: -.1em;
+}
+.size18small {  // 歳以上 のとこ
+  font-size: $fontsizesize18small;  // calc(100vw / 10)
+  letter-spacing: 0;
+  padding-left: .1em;
+
+  .lang_en & {  // 英字ページ修正
+    font-size: $fontsizesize18smallen; // calc(100vw / 5.5)
+  }
+  .lang_tc & {  // 英字ページ修正
+    font-size: $fontsizesize18smalltc; // calc(100vw / 5.5)
+  }
+}
+
+
+
+/* NOボタン押したら表示されるテキスト
+----------------------------- */
+.warning-general {
+  color: red;
+  font: {
+    size: $fontsizewarninggeneral;
+  }
+  line-height: 3;
+  text-decoration: underline;
+  transition: all .3s ease-out;
+  letter-spacing: .1em;
+  .lang_en & {  // 英字ページ修正
+    line-height: 1;
+  }
+}
+.warning-off {
+  opacity: 0;
+  line-height: 0;
+}
+.warning-on {
+  opacity: 1;
+  line-height: 3;
+  .lang_en & {  // 英字ページ修正
+    line-height: 1;
+  }
+}
+
+/* ボタン
+----------------------------- */
+button {  // ボタンのデフォルトスタイル解除
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+}
+
+button {  // ボタン装飾
+  background: linear-gradient(#fff, #efefef);
+  width: 40%;
+  padding: 2% 0;
+  margin: 0;
+  overflow: hidden;
+  transition: all .1s ease-out;
+  color: #555;
+
+  &:hover {
+    transform: translateY(2px);
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, .2);
+  }
+}
+
+#btnYes {
+  border: 1px solid $btnYescolor;
+  box-shadow: 2px 3px 0 rgba($btnYescolor, .8);
+  color: $btnYescolor;
+  &:hover {
+    box-shadow: 1px 1px 0 rgba($btnYescolor, 1);
+  }
+}
+#btnNo {
+  border: 1px solid $btnNocolor;
+  box-shadow: 2px 3px 0 rgba($btnNocolor, .8);
+  color: $btnNocolor;
+  &:hover {
+    box-shadow: 1px 1px 0 rgba($btnNocolor, 1);
+  }
+}
+
+.btn-entext {  // ボタン内の英字 YESとNO
+  font-size: $fontsizebtnentext;  // calc(100vw / 13)
+  font-weight: bold;
+
+}
+
+
+/* 一番下の警告文字
+----------------------------- */
+.warning {
+  font: {
+    size: $fontsizewarning;
+  }
+  text-align: right;
+  margin: 3em 0 0;
+  color: #333;
+}

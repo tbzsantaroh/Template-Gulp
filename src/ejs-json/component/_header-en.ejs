@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: https://ogp.me/ns#  <%- data.ogp_prefix %>: https://ogp.me/ns/article#"><%# ogpはトップページのみ website それ以外は article と指定 %>
+  <meta charset="utf-8">
+  <title><%= data.head_pagetitle %><%= data.head_pagetitlespacer %>Trap subURL</title><%# サイトタイトル %>
+  <link rel="canonical" href="<%- data.head_rooturl %><%- data.head_pageurl %><%- data.head_pageurllang %>.html"><%# このサイトの絶対パスURL %>
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,viewport-fit=cover">
+  <meta name="mobile-web-app-capable" content="yes"><%# ノッチレイアウト用設定 %>
+  <meta name="mobile-web-app-status-bar-style" content="black-translucent"><%# ノッチレイアウト用設定 %>
+  <meta name="apple-mobile-web-app-capable" content="yes"><%# あいぽんノッチレイアウト用設定 %>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><%# あいぽんノッチレイアウト用設定 %>
+  <meta name="description" content="The goddess that made the sun was a crossdresser!"><%# サイト説明 %>
+  <meta property="og:title" content="<%= data.head_pagetitle %><%= data.head_pagetitlespacer %>Trap subURL"><%# facebookサイトタイトル %>
+  <meta property="og:description" content="The goddess that made the sun was a crossdresser!"><%# facebookサイト説明 %>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="<%- data.head_rooturl %><%- data.head_pageurl %><%- data.head_pageurllang %>.html"><%# facebookでリンクさせるURL %>
+  <meta property="og:image" content="<%- data.head_rooturl %>img/ogp/ogp-icon.png"><%# facebookで表示されるサムネ画像 %>
+  <meta property="fb:app_id" content="xxxxxx"><%# facebookアプリID %>
+  <meta name="twitter:card" content="summary_large_image"><%# twitter cardの画像の大きさ %>
+  <meta name="twitter:site" content="@twittername"><%# twitterサイトネーム %>
+  <meta name="twitter:creator" content="@twittername"><%# twitterユーザー名 %>
+  <link rel="alternate" hreflang="ja" href="<%- data.head_rooturl %><%- data.head_pageurl %>.html"><%# 多言語指定 日本語  %>
+  <link rel="alternate" hreflang="en" href="<%- data.head_rooturl %><%- data.head_pageurl %>-en.html"><%# 多言語指定 英語  %>
+  <link rel="alternate" hreflang="zh-Hant" href="<%- data.head_rooturl %><%- data.head_pageurl %>-tc.html"><%# 多言語指定 繁体中国語  %>
+  <link rel="icon" href="favicon.ico"><%# サイトアイコン 複数サイズまとめて入れる %>
+  <link href="css/bootstrap-reboot.min.css" rel="stylesheet"><%# リセットCSS SCSSで混ぜるとアイコンフォントとかに上書きしてしまうので、ここに置かざるを得ない %>
+  <link href="https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"><%# アイコンフォント %>
+  <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet"><%# webfont日本語 %>
+  <%- data.css_webfont %><%# 追加CSSは入れない場合もあるので、ファイルパスだけ指定できないから全文入れるようにする %>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightcase/2.5.0/css/lightcase.min.css" rel="stylesheet"><%# lightboxのCSS SCSSで混ぜるとアイコンフォントの相対パスを取ってこれないので、ここで別に読み込む %>
+  <link href="css/<%- data.head_pageurl %>.css" rel="stylesheet"><%# CSSはなるべくここでまとめてビルドする %>
+</head>
+<body class="page_<%- data.head_pageurl %><%- data.body_pagelang %>"><div class="footerbottomwrap"><%# .footerbottomwrap はfooterを下寄せするためのラッパー %>

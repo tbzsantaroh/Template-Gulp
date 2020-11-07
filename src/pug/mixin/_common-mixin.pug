@@ -1,0 +1,9 @@
+//- ここに共通で使うmixin書く
+
+//-
+  picture
+  +picture(`ファイルパス`, `ファイルタイプ`, `alt`)(class=`pictureにclass idが必要な場合はここに書く` id=`必要ない場合は何も書かない`)
+mixin picture(filepath, type, alt)
+  picture&attributes(attributes)
+    source(type=`image/webp` srcset=`img/${filepath}.webp`)
+    img(src=`img/${filepath}.${type}` alt=`${alt}` lazyload=`on`)
